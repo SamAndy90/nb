@@ -1,6 +1,6 @@
 import { ReferrerToast } from '@/hooks/useReferrerToast';
 import { Suspense } from 'react';
-// import { Hero } from '@/features/landing/components/sections/Hero';
+import { Hero } from '@/features/landing/components/sections/Hero';
 import { Footer } from '@/components/Footer';
 import {
     DESKTOP_FOOTER_MENU_ITEMS,
@@ -40,13 +40,6 @@ import dynamic from 'next/dynamic';
 const CompetitionModal = dynamic(
     () =>
         import('@/features/landing/components/sections/Modal/CompetitionModal'),
-    {
-        ssr: false,
-    }
-);
-
-const Hero = dynamic(
-    () => import('@/features/landing/components/sections/Hero/Hero'),
     {
         ssr: false,
     }
@@ -107,7 +100,7 @@ export default async function Home() {
     return (
         <main className="flex min-h-screen w-full flex-col items-center justify-between overflow-x-hidden">
             <GradientBackground variant="section-2">
-                <Hero options={heroOptions} />
+                {/* <Hero options={heroOptions} /> */}
                 <Suspense fallback={<Loader />}>
                     <BackedByScience />
                 </Suspense>
