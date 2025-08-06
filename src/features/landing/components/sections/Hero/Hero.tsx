@@ -141,7 +141,7 @@ const HERO_TICK_RATE = 6000;
     Should the hero keep the same aspect ratio
     If it just stays as the screen size, what should happen with the extra space
 */
-export function Hero({ options }: { options: HeroOption[] }) {
+export default function Hero({ options }: { options: HeroOption[] }) {
     const [curr, setCurr] = useState(0);
     const {
         productImage: image,

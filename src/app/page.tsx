@@ -1,6 +1,6 @@
 import { ReferrerToast } from '@/hooks/useReferrerToast';
 import { Suspense } from 'react';
-import { Hero } from '@/features/landing/components/sections/Hero';
+// import { Hero } from '@/features/landing/components/sections/Hero';
 import { Footer } from '@/components/Footer';
 import {
     DESKTOP_FOOTER_MENU_ITEMS,
@@ -40,6 +40,13 @@ import dynamic from 'next/dynamic';
 const CompetitionModal = dynamic(
     () =>
         import('@/features/landing/components/sections/Modal/CompetitionModal'),
+    {
+        ssr: false,
+    }
+);
+
+const Hero = dynamic(
+    () => import('@/features/landing/components/sections/Hero/Hero'),
     {
         ssr: false,
     }
